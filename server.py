@@ -39,11 +39,11 @@ class Game:
       if all(self.board[i][j] == sign for j in range(self.size)): return True # row check
       if all(self.board[j][i] == sign for j in range(self.size)): return True # col check
 
-      # diagonal check
-      if all(self.board[i][i] == sign for i in range(self.size)): return True 
-      if all(self.board[i][self.size-i-1] == sign for i in range(self.size)): return True 
+    # diagonal check
+    if all(self.board[i][i] == sign for i in range(self.size)): return True 
+    if all(self.board[i][self.size-i-1] == sign for i in range(self.size)): return True 
 
-      return False
+    return False
   
   def check_for_tie(self):
     return self.moves_made >= self.size*self.size
